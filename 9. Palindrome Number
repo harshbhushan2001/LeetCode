@@ -1,0 +1,21 @@
+/**
+ * @param {number} x
+ * @return {boolean}
+ */
+var isPalindrome = function(x) {
+        let out = 0;
+        let main = x;
+        let remainder;
+
+        while (x > 0) {
+            remainder = x % 10;
+            out = (out * 10) + remainder;
+            x = Math.floor(x / 10);
+        }
+
+        if (out === main) {
+            return true;
+        } else {
+            return false;
+        }
+    };
