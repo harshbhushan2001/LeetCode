@@ -1,0 +1,18 @@
+let x = 0, y = 0;
+  const toKey = (a, b) => `${a},${b}`;
+  const history = new Set([toKey(x, y)]);
+
+  for (let direction of path) {
+    switch (direction) {
+      case 'N': x++; break;
+      case 'W': y--; break;
+      case 'S': x--; break;
+      case 'E': y++; break;
+    }
+    if (history.has(toKey(x, y))) {
+      return true;
+    }
+    history.add(toKey(x, y));
+  }
+
+  return false;
